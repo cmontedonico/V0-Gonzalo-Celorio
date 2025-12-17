@@ -12,7 +12,7 @@ const interactivePoints = [
     title: "Curriculum",
     audioSrc: "/audio/musica1.mp3",
     videoSrc: "/videos/video1.mp4",
-    position: { top: "15%", left: "15%" },
+    position: { top: "15%", right: "10%" }, // Right side, top
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const interactivePoints = [
     title: "Bibliografía",
     audioSrc: "/audio/musica2.mp3",
     videoSrc: "/videos/video2.mp4",
-    position: { top: "15%", left: "75%" },
+    position: { top: "50%", right: "10%" }, // Right side, below Curriculum
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const interactivePoints = [
     title: "Sobre la Auto-ficción",
     audioSrc: "/audio/musica3.mp3",
     videoSrc: "/videos/video3.mp4",
-    position: { top: "55%", left: "25%" },
+    position: { top: "10%", left: "50%", transform: "translateX(-50%)" }, // Center top, above Gonzalo's head
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const interactivePoints = [
     title: "Tres Lindas Cubanas (línea materna)",
     audioSrc: "/audio/musica4.mp3",
     videoSrc: "/videos/video4.mp4",
-    position: { top: "35%", left: "15%" },
+    position: { top: "15%", left: "10%" }, // Left side, top
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const interactivePoints = [
     title: "El metal y la escoria (línea paterna)",
     audioSrc: "/audio/musica5.mp3",
     videoSrc: "/videos/video5.mp4",
-    position: { top: "35%", left: "45%" },
+    position: { top: "40%", left: "10%" }, // Left side, middle
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ const interactivePoints = [
     title: "Los apostatas (hermanos)",
     audioSrc: "/audio/musica6.mp3",
     videoSrc: "/videos/video6.mp4",
-    position: { top: "35%", left: "75%" },
+    position: { top: "65%", left: "10%" }, // Left side, bottom
   },
 ]
 
@@ -101,7 +101,6 @@ export default function HomePage() {
             position={point.position}
             onHover={handlePointHover}
             onVideoPlay={handleVideoPlay}
-            isAmplified={hoveredPoint === 3 && [4, 5, 6].includes(point.id)}
           />
         ))}
       </div>
