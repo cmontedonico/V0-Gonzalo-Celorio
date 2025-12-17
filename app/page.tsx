@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { InteractivePoint } from "@/components/interactive-point"
 import { VideoPlayer } from "@/components/video-player"
 
@@ -59,6 +60,16 @@ const interactivePoints = [
 export default function HomePage() {
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null)
   const [currentVideo, setCurrentVideo] = useState<string | null>(null)
+  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null)
+
+  useEffect(() => {
+    if (backgroundAudioRef.current) {
+      backgroundAudioRef.current.volume = 0.3 // Set volume to 30%
+      backgroundAudioRef.current.play().catch((error) => {
+        console.log("[v0] Background audio autoplay prevented:", error)
+      })
+    }
+  }, [])
 
   const handlePointHover = (id: number, isHovering: boolean) => {
     setHoveredPoint(isHovering ? id : null)
@@ -76,6 +87,8 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
+      <audio ref={backgroundAudioRef} src="/audio/background-music.mp3" loop className="hidden" />
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -110,6 +123,16 @@ export default function HomePage() {
         <h1 className="text-4xl font-bold text-white drop-shadow-2xl">Gonzalo Celorio</h1>
         <p className="text-xl text-white/90 drop-shadow-lg mt-2">Obra Literaria Interactiva</p>
       </div>
+
+      {/* Footer with link to about page */}
+      <footer className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <Link
+          href="/about"
+          className="text-white/80 hover:text-white text-sm transition-colors duration-200 drop-shadow-lg hover:underline"
+        >
+          Realización Jorge Suárez - UAM México
+        </Link>
+      </footer>
 
       {/* Video Player */}
       {currentVideo && <VideoPlayer videoSrc={currentVideo} onClose={handleVideoClose} />}
