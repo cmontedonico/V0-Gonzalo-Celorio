@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft, Clock, Sparkles, FileText, Zap } from "lucide-react"
+import { ArrowLeft, Clock, Sparkles, FileText, Zap, User } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -201,174 +201,196 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-6 border border-blue-500/30">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-blue-500 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  7
+                </span>
+                <div>
+                  <h3 className="font-semibold text-lg text-blue-300">Control de Audio y Actualización de Textos</h3>
+                  <p className="text-sm text-gray-400 mt-1">Mejoras en reproducción y cambios de contenido</p>
+                </div>
+              </div>
+              <div className="bg-gray-900/50 rounded p-4 font-mono text-sm text-gray-300 border border-gray-700">
+                <p className="italic">
+                  "No se escucha la música. Agrega un reproductor con control de volumen al lado inferior derecho de la
+                  página, pequeño y sencillo para subir y bajar el audio. En el elemento flotante llamado 'curriculum'
+                  cambia el texto a que sea 'Un montón de espejos rotos (memorias)'."
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-6 border border-blue-500/30">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-blue-500 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  8
+                </span>
+                <div>
+                  <h3 className="font-semibold text-lg text-blue-300">Integración de Videos de YouTube</h3>
+                  <p className="text-sm text-gray-400 mt-1">Soporte para streams de YouTube en popups</p>
+                </div>
+              </div>
+              <div className="bg-gray-900/50 rounded p-4 font-mono text-sm text-gray-300 border border-gray-700">
+                <p className="italic">
+                  "Los videos ahora viven en YouTube, y quiero poder actualizar las ligas y desplegarlos en un popup
+                  pero ligado al stream en YouTube. Cambia o crea el video del elemento llamado 'Bibliografía' a este
+                  link: https://youtu.be/5Be7muS6u1o?si=7LxsNEFMORkKHuEf"
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-6 border border-blue-500/30">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-blue-500 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  9
+                </span>
+                <div>
+                  <h3 className="font-semibold text-lg text-blue-300">Actualización de Todos los Videos a YouTube</h3>
+                  <p className="text-sm text-gray-400 mt-1">Migración completa de videos locales a YouTube</p>
+                </div>
+              </div>
+              <div className="bg-gray-900/50 rounded p-4 font-mono text-sm text-gray-300 border border-gray-700">
+                <p className="italic">
+                  "Realiza un cambio igual en los videos de los siguientes elementos: Elemento llamado 'Tres Lindas
+                  Cubanas' ligado al video https://youtu.be/-zcCyWNwdmE?si=l4R_Vg8NGBP8X-K0, Elemento llamado 'El Metal
+                  y la escoria' ligado al video https://youtu.be/RiD7vobjIPg?si=Hjh17DI243cIFBoM, Elemento llamado
+                  'Apostatas' ligado al video https://youtu.be/fKLIm327sfk?si=vbC2g4ttXnwfyuSM, Elemento llamado 'Sobre
+                  la Auto-ficción' ligado al video https://youtu.be/1Ew184asbcA?si=c__-2HuW3Qwty2bl. Y actualiza la
+                  página de about con los cambios y métricas requeridas."
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-lg p-6 border border-blue-500/30">
+              <div className="flex items-start gap-3 mb-3">
+                <span className="bg-blue-500 text-white text-sm font-bold rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                  10
+                </span>
+                <div>
+                  <h3 className="font-semibold text-lg text-blue-300">
+                    Actualización Video "Un montón de espejos rotos"
+                  </h3>
+                  <p className="text-sm text-gray-400 mt-1">Cambio de video y adición de agradecimientos</p>
+                </div>
+              </div>
+              <div className="bg-gray-900/50 rounded p-4 font-mono text-sm text-gray-300 border border-gray-700">
+                <p className="italic">
+                  "Actualiza el elemento llamado 'Un montón de espejos rotos' por el video
+                  https://youtu.be/uAZS58fnaPM?si=szdsHFIZc3K8wo2N. Actualiza siempre la página de about y agrega en esa
+                  página un agradecimiento a Ernesto Macipp y Edgar Javier Garcia por su participación en la grabación y
+                  al Dr. Nemesio Chaves por su participación en el guión de edición."
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Time Comparison */}
+        {/* Timeline Comparison */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
             <Clock className="w-6 h-6 text-green-400" />
-            Comparación de Tiempo
+            Comparación de Tiempos
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-lg p-6 border border-purple-500/30">
+            <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-lg p-6 border border-green-500/30">
               <div className="flex items-center gap-3 mb-4">
-                <Sparkles className="w-8 h-8 text-purple-400" />
-                <h3 className="text-xl font-semibold">Con IA (v0)</h3>
-              </div>
-              <div className="space-y-3 text-gray-300">
-                <div className="flex justify-between">
-                  <span>Diseño inicial:</span>
-                  <span className="font-semibold text-purple-300">2 minutos</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Desarrollo:</span>
-                  <span className="font-semibold text-purple-300">3 minutos</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Ajustes y correcciones:</span>
-                  <span className="font-semibold text-purple-300">5 minutos</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Documentación:</span>
-                  <span className="font-semibold text-purple-300">2 minutos</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Música de fondo:</span>
-                  <span className="font-semibold text-purple-300">1 minuto</span>
-                </div>
-                <div className="border-t border-purple-500/30 pt-3 mt-3">
-                  <div className="flex justify-between text-lg font-bold">
-                    <span>Total:</span>
-                    <span className="text-purple-400">~13 minutos</span>
-                  </div>
+                <Sparkles className="w-8 h-8 text-green-400" />
+                <div>
+                  <h3 className="text-xl font-semibold text-green-300">Con IA (v0.dev)</h3>
+                  <p className="text-2xl font-bold text-white mt-2">~19 minutos</p>
                 </div>
               </div>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>✓ Diseño y estructura: 3 min</li>
+                <li>✓ Componentes interactivos: 4 min</li>
+                <li>✓ Integración multimedia: 3 min</li>
+                <li>✓ Ajustes y refinamiento: 3 min</li>
+                <li>✓ Control de audio: 2 min</li>
+                <li>✓ Integración YouTube: 2 min</li>
+                <li>✓ Actualización de videos: 1 min</li>
+                <li>✓ Video final y agradecimientos: 1 min</li>
+              </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-900/30 to-red-900/30 rounded-lg p-6 border border-orange-500/30">
+            <div className="bg-gradient-to-br from-red-900/20 to-orange-900/20 rounded-lg p-6 border border-red-500/30">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-8 h-8 text-orange-400" />
-                <h3 className="text-xl font-semibold">Desarrollo Tradicional</h3>
-              </div>
-              <div className="space-y-3 text-gray-300">
-                <div className="flex justify-between">
-                  <span>Diseño en Figma:</span>
-                  <span className="font-semibold text-orange-300">2-4 horas</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Setup del proyecto:</span>
-                  <span className="font-semibold text-orange-300">1 hora</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Desarrollo frontend:</span>
-                  <span className="font-semibold text-orange-300">8-12 horas</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Testing y debugging:</span>
-                  <span className="font-semibold text-orange-300">2-4 horas</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Integración de audio:</span>
-                  <span className="font-semibold text-orange-300">1-2 horas</span>
-                </div>
-                <div className="border-t border-orange-500/30 pt-3 mt-3">
-                  <div className="flex justify-between text-lg font-bold">
-                    <span>Total:</span>
-                    <span className="text-orange-400">14-23 horas</span>
-                  </div>
+                <User className="w-8 h-8 text-red-400" />
+                <div>
+                  <h3 className="text-xl font-semibold text-red-300">Desarrollo Tradicional</h3>
+                  <p className="text-2xl font-bold text-white mt-2">~19-28 horas</p>
                 </div>
               </div>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>• Setup y configuración: 2-3 hrs</li>
+                <li>• Diseño UI/UX: 3-4 hrs</li>
+                <li>• Componentes base: 3-4 hrs</li>
+                <li>• Sistema multimedia: 4-6 hrs</li>
+                <li>• Debugging y optimización: 2-4 hrs</li>
+                <li>• Controles de audio: 1-3 hrs</li>
+                <li>• Integración YouTube API: 2-3 hrs</li>
+                <li>• Testing de videos: 1 hr</li>
+                <li>• Documentación y créditos: 1 hr</li>
+              </ul>
             </div>
           </div>
 
-          <div className="mt-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg p-6 border border-green-500/30">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-green-400 mb-2">99.1% más rápido</p>
-              <p className="text-gray-300">
-                La IA reduce el tiempo de desarrollo de ~14-23 horas a solo 13 minutos, permitiendo iterar y ajustar en
-                tiempo real.
-              </p>
+          <div className="mt-6 bg-gradient-to-r from-purple-900/20 to-pink-900/20 rounded-lg p-6 border border-purple-500/30">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-purple-300">Eficiencia</h3>
+                <p className="text-gray-400 mt-1">Reducción de tiempo de desarrollo</p>
+              </div>
+              <div className="text-right">
+                <p className="text-4xl font-bold text-white">98.8%</p>
+                <p className="text-sm text-gray-400">más rápido</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* How to Reproduce */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Cómo Reproducir Este Proyecto</h2>
-          <div className="space-y-4">
-            <div className="bg-gray-800/30 rounded-lg p-5 border border-gray-700/50">
-              <div className="flex gap-3">
-                <span className="text-2xl font-bold text-blue-400">1.</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Accede a v0.dev</h3>
-                  <p className="text-gray-300">
-                    Visita{" "}
-                    <a
-                      href="https://v0.dev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline"
-                    >
-                      v0.dev
-                    </a>{" "}
-                    e inicia sesión con tu cuenta de Vercel o GitHub.
-                  </p>
-                </div>
-              </div>
+        {/* Acknowledgments Section */}
+        <section className="mb-12 bg-gradient-to-br from-amber-900/20 to-yellow-900/20 rounded-lg p-6 border border-amber-500/30">
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <User className="w-6 h-6 text-amber-400" />
+            Agradecimientos
+          </h2>
+          <div className="space-y-4 text-gray-300">
+            <p className="text-lg leading-relaxed">
+              Este proyecto no habría sido posible sin la valiosa participación de:
+            </p>
+            <div className="bg-gray-900/30 rounded-lg p-5 border border-amber-700/30">
+              <h3 className="font-semibold text-lg mb-3 text-amber-300">Grabación de Videos</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-400 mt-1">•</span>
+                  <span>
+                    <strong>Ernesto Macipp</strong> - Por su excelente trabajo en la grabación de contenido audiovisual
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-400 mt-1">•</span>
+                  <span>
+                    <strong>Edgar Javier García</strong> - Por su participación y apoyo técnico en la grabación
+                  </span>
+                </li>
+              </ul>
             </div>
-
-            <div className="bg-gray-800/30 rounded-lg p-5 border border-gray-700/50">
-              <div className="flex gap-3">
-                <span className="text-2xl font-bold text-blue-400">2.</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Prepara tus Materiales</h3>
-                  <p className="text-gray-300">
-                    Reúne todas las imágenes, textos y archivos multimedia que necesitas. Súbelos como adjuntos en el
-                    chat de v0.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-gray-900/30 rounded-lg p-5 border border-amber-700/30">
+              <h3 className="font-semibold text-lg mb-3 text-amber-300">Guión y Edición</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-amber-400 mt-1">•</span>
+                  <span>
+                    <strong>Dr. Nemesio Chaves</strong> - Por su invaluable contribución en el guión de edición y
+                    dirección creativa
+                  </span>
+                </li>
+              </ul>
             </div>
-
-            <div className="bg-gray-800/30 rounded-lg p-5 border border-gray-700/50">
-              <div className="flex gap-3">
-                <span className="text-2xl font-bold text-blue-400">3.</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Usa el Prompt Inicial</h3>
-                  <p className="text-gray-300">
-                    Describe claramente lo que quieres: estructura, interacciones, posicionamiento y comportamientos
-                    multimedia.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/30 rounded-lg p-5 border border-gray-700/50">
-              <div className="flex gap-3">
-                <span className="text-2xl font-bold text-blue-400">4.</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Refina Iterativamente</h3>
-                  <p className="text-gray-300">
-                    Prueba el resultado, identifica problemas o mejoras, y usa prompts específicos para ajustar. Sé
-                    claro y directo en tus solicitudes.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-800/30 rounded-lg p-5 border border-gray-700/50">
-              <div className="flex gap-3">
-                <span className="text-2xl font-bold text-blue-400">5.</span>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Despliega tu Proyecto</h3>
-                  <p className="text-gray-300">
-                    Una vez satisfecho, haz click en "Publish" para desplegar en Vercel o descarga el código para
-                    personalizarlo más.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <p className="text-sm text-gray-400 italic mt-4">
+              Agradecemos profundamente su dedicación y profesionalismo en la creación de este proyecto multimedia.
+            </p>
           </div>
         </section>
 

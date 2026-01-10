@@ -1,18 +1,19 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { InteractivePoint } from "@/components/interactive-point"
 import { VideoPlayer } from "@/components/video-player"
+import { MusicPlayer } from "@/components/music-player"
 
 const interactivePoints = [
   {
     id: 1,
     image: "/images/curriculum.jpg",
-    title: "Curriculum",
+    title: "Un montón de espejos rotos (memorias)",
     audioSrc: "/audio/musica1.mp3",
-    videoSrc: "/videos/video1.mp4",
+    videoSrc: "https://youtu.be/uAZS58fnaPM?si=szdsHFIZc3K8wo2N",
     position: { top: "15%", right: "10%" }, // Right side, top
   },
   {
@@ -20,7 +21,7 @@ const interactivePoints = [
     image: "/images/bibliografia.jpg",
     title: "Bibliografía",
     audioSrc: "/audio/musica2.mp3",
-    videoSrc: "/videos/video2.mp4",
+    videoSrc: "https://youtu.be/5Be7muS6u1o?si=7LxsNEFMORkKHuEf",
     position: { top: "50%", right: "10%" }, // Right side, below Curriculum
   },
   {
@@ -28,7 +29,7 @@ const interactivePoints = [
     image: "/images/autoficcion.jpg",
     title: "Sobre la Auto-ficción",
     audioSrc: "/audio/musica3.mp3",
-    videoSrc: "/videos/video3.mp4",
+    videoSrc: "https://youtu.be/1Ew184asbcA?si=c__-2HuW3Qwty2bl",
     position: { top: "10%", left: "50%", transform: "translateX(-50%)" }, // Center top, above Gonzalo's head
   },
   {
@@ -36,7 +37,7 @@ const interactivePoints = [
     image: "/images/tres-lindas-cubanas.jpg",
     title: "Tres Lindas Cubanas (línea materna)",
     audioSrc: "/audio/musica4.mp3",
-    videoSrc: "/videos/video4.mp4",
+    videoSrc: "https://youtu.be/-zcCyWNwdmE?si=l4R_Vg8NGBP8X-K0",
     position: { top: "15%", left: "10%" }, // Left side, top
   },
   {
@@ -44,7 +45,7 @@ const interactivePoints = [
     image: "/images/el-metal-y-la-escoria.jpg",
     title: "El metal y la escoria (línea paterna)",
     audioSrc: "/audio/musica5.mp3",
-    videoSrc: "/videos/video5.mp4",
+    videoSrc: "https://youtu.be/RiD7vobjIPg?si=Hjh17DI243cIFBoM",
     position: { top: "40%", left: "10%" }, // Left side, middle
   },
   {
@@ -52,7 +53,7 @@ const interactivePoints = [
     image: "/images/los-apostatas.jpg",
     title: "Los apostatas (hermanos)",
     audioSrc: "/audio/musica6.mp3",
-    videoSrc: "/videos/video6.mp4",
+    videoSrc: "https://youtu.be/fKLIm327sfk?si=vbC2g4ttXnwfyuSM",
     position: { top: "65%", left: "10%" }, // Left side, bottom
   },
 ]
@@ -60,15 +61,9 @@ const interactivePoints = [
 export default function HomePage() {
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null)
   const [currentVideo, setCurrentVideo] = useState<string | null>(null)
-  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => {
-    if (backgroundAudioRef.current) {
-      backgroundAudioRef.current.volume = 0.3 // Set volume to 30%
-      backgroundAudioRef.current.play().catch((error) => {
-        console.log("[v0] Background audio autoplay prevented:", error)
-      })
-    }
+    // No need for background audio control here as MusicPlayer handles it
   }, [])
 
   const handlePointHover = (id: number, isHovering: boolean) => {
@@ -87,7 +82,7 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <audio ref={backgroundAudioRef} src="/audio/background-music.mp3" loop className="hidden" />
+      <MusicPlayer audioSrc="/audio/background-music.mp3" autoPlay />
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
