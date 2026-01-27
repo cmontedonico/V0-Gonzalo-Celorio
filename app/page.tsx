@@ -1,18 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { InteractivePoint } from "@/components/interactive-point"
-import { VideoPlayer } from "@/components/video-player"
-import { MusicPlayer } from "@/components/music-player"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { InteractivePoint } from "@/components/interactive-point";
+import { VideoPlayer } from "@/components/video-player";
+import { MusicPlayer } from "@/components/music-player";
 
 const interactivePoints = [
   {
     id: 1,
     image: "/images/curriculum.jpg",
-    title: "Un montón de espejos rotos (memorias)",
-    audioSrc: "/audio/musica1.mp3",
+    title: "Ese Montón de espejos rotos (memorias)",
     videoSrc: "https://youtu.be/uAZS58fnaPM?si=szdsHFIZc3K8wo2N",
     position: { top: "15%", right: "10%" }, // Right side, top
   },
@@ -20,7 +19,6 @@ const interactivePoints = [
     id: 2,
     image: "/images/bibliografia.jpg",
     title: "Bibliografía",
-    audioSrc: "/audio/musica2.mp3",
     videoSrc: "https://youtu.be/5Be7muS6u1o?si=7LxsNEFMORkKHuEf",
     position: { top: "50%", right: "10%" }, // Right side, below Curriculum
   },
@@ -28,15 +26,13 @@ const interactivePoints = [
     id: 3,
     image: "/images/autoficcion.jpg",
     title: "Sobre la Auto-ficción",
-    audioSrc: "/audio/musica3.mp3",
     videoSrc: "https://youtu.be/1Ew184asbcA?si=c__-2HuW3Qwty2bl",
-    position: { top: "10%", left: "50%", transform: "translateX(-50%)" }, // Center top, above Gonzalo's head
+    position: { top: "10%", left: "50%" }, // Center top, above Gonzalo's head
   },
   {
     id: 4,
     image: "/images/tres-lindas-cubanas.jpg",
     title: "Tres Lindas Cubanas (línea materna)",
-    audioSrc: "/audio/musica4.mp3",
     videoSrc: "https://youtu.be/-zcCyWNwdmE?si=l4R_Vg8NGBP8X-K0",
     position: { top: "15%", left: "10%" }, // Left side, top
   },
@@ -44,7 +40,6 @@ const interactivePoints = [
     id: 5,
     image: "/images/el-metal-y-la-escoria.jpg",
     title: "El metal y la escoria (línea paterna)",
-    audioSrc: "/audio/musica5.mp3",
     videoSrc: "https://youtu.be/RiD7vobjIPg?si=Hjh17DI243cIFBoM",
     position: { top: "40%", left: "10%" }, // Left side, middle
   },
@@ -52,37 +47,36 @@ const interactivePoints = [
     id: 6,
     image: "/images/los-apostatas.jpg",
     title: "Los apostatas (hermanos)",
-    audioSrc: "/audio/musica6.mp3",
     videoSrc: "https://youtu.be/fKLIm327sfk?si=vbC2g4ttXnwfyuSM",
     position: { top: "65%", left: "10%" }, // Left side, bottom
   },
-]
+];
 
 export default function HomePage() {
-  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null)
-  const [currentVideo, setCurrentVideo] = useState<string | null>(null)
+  const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+  const [currentVideo, setCurrentVideo] = useState<string | null>(null);
 
   useEffect(() => {
     // No need for background audio control here as MusicPlayer handles it
-  }, [])
+  }, []);
 
   const handlePointHover = (id: number, isHovering: boolean) => {
-    setHoveredPoint(isHovering ? id : null)
-  }
+    setHoveredPoint(isHovering ? id : null);
+  };
 
   const handleVideoPlay = (videoSrc: string) => {
-    setCurrentVideo(videoSrc)
-  }
+    setCurrentVideo(videoSrc);
+  };
 
   const handleVideoClose = () => {
-    setCurrentVideo(null)
-  }
+    setCurrentVideo(null);
+  };
 
-  const isBackgroundBlurred = hoveredPoint !== null
+  const isBackgroundBlurred = hoveredPoint !== null;
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <MusicPlayer audioSrc="/audio/background-music.mp3" autoPlay />
+      <MusicPlayer audioSrc="/music/gonzalo.mp3" autoPlay />
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -104,7 +98,6 @@ export default function HomePage() {
             id={point.id}
             image={point.image}
             title={point.title}
-            audioSrc={point.audioSrc}
             videoSrc={point.videoSrc}
             position={point.position}
             onHover={handlePointHover}
@@ -115,8 +108,12 @@ export default function HomePage() {
 
       {/* Title Overlay */}
       <div className="absolute top-8 left-8 z-20">
-        <h1 className="text-4xl font-bold text-white drop-shadow-2xl">Gonzalo Celorio</h1>
-        <p className="text-xl text-white/90 drop-shadow-lg mt-2">Obra Literaria Interactiva</p>
+        <h1 className="text-4xl font-bold text-white drop-shadow-2xl">
+          Gonzalo Celorio
+        </h1>
+        <p className="text-xl text-white/90 drop-shadow-lg mt-2">
+          Premio Cervantes 2025
+        </p>
       </div>
 
       {/* Footer with link to about page */}
@@ -130,7 +127,9 @@ export default function HomePage() {
       </footer>
 
       {/* Video Player */}
-      {currentVideo && <VideoPlayer videoSrc={currentVideo} onClose={handleVideoClose} />}
+      {currentVideo && (
+        <VideoPlayer videoSrc={currentVideo} onClose={handleVideoClose} />
+      )}
     </main>
-  )
+  );
 }
