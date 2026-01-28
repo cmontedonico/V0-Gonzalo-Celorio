@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, forwardRef, useImperativeHandle } from "react"
 import { Volume2, VolumeX } from "lucide-react"
 
 interface MusicPlayerProps {
@@ -10,7 +10,12 @@ interface MusicPlayerProps {
   autoPlay?: boolean
 }
 
-export function MusicPlayer({ audioSrc, autoPlay = true }: MusicPlayerProps) {
+export interface MusicPlayerRef {
+  pause: () => void
+  play: () => void
+}
+
+export const MusicPlayer = forwardRef<MusicPlayerRef, MusicPlayerProps>(({ audioSrc, autoPlay = true }, ref) => {
   const [volume, setVolume] = useState(0.3)
   const [isMuted, setIsMuted] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -54,6 +59,21 @@ export function MusicPlayer({ audioSrc, autoPlay = true }: MusicPlayerProps) {
   const handlePause = () => {
     setIsPlaying(false)
   }
+
+  useImperativeHandle(ref, () => ({
+    pause: () => {
+      if (audioRef.current && !audioRef.current.paused) {
+        audioRef.current.pause()
+      }
+    },
+    play: () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current.play().catch((error) => {
+          console.log("[v0] Failed to resume audio:", error)
+        })
+      }
+    }
+  }))
 
   return (
     <div className="fixed bottom-6 right-6 z-50 bg-black/80 backdrop-blur-md rounded-full px-4 py-3 shadow-2xl border border-white/10 flex items-center gap-3">
@@ -101,4 +121,6 @@ export function MusicPlayer({ audioSrc, autoPlay = true }: MusicPlayerProps) {
       </span>
     </div>
   )
-}
+})
+
+MusicPlayer.displayName = "MusicPlayer"

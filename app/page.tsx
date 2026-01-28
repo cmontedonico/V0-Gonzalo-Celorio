@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { InteractivePoint } from "@/components/interactive-point";
 import { VideoPlayer } from "@/components/video-player";
-import { MusicPlayer } from "@/components/music-player";
+import { MusicPlayer, type MusicPlayerRef } from "@/components/music-player";
 
 const interactivePoints = [
   {
@@ -55,10 +55,17 @@ const interactivePoints = [
 export default function HomePage() {
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
   const [currentVideo, setCurrentVideo] = useState<string | null>(null);
+  const musicPlayerRef = useRef<MusicPlayerRef>(null);
 
   useEffect(() => {
-    // No need for background audio control here as MusicPlayer handles it
-  }, []);
+    if (currentVideo) {
+      // Pause music when video opens
+      musicPlayerRef.current?.pause();
+    } else {
+      // Resume music when video closes
+      musicPlayerRef.current?.play();
+    }
+  }, [currentVideo]);
 
   const handlePointHover = (id: number, isHovering: boolean) => {
     setHoveredPoint(isHovering ? id : null);
@@ -76,7 +83,7 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <MusicPlayer audioSrc="/music/gonzalo.mp3" autoPlay />
+      <MusicPlayer ref={musicPlayerRef} audioSrc="/music/gonzalo.mp3" autoPlay />
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
