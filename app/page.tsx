@@ -13,21 +13,21 @@ const interactivePoints = [
     image: "/images/curriculum.jpg",
     title: "Ese Montón de espejos rotos (memorias)",
     videoSrc: "https://youtu.be/uAZS58fnaPM?si=szdsHFIZc3K8wo2N",
-    position: { top: "15%", right: "10%" }, // Right side, top
+    position: { top: "65%", right: "15%" }, // Right side, top
   },
   {
     id: 2,
     image: "/images/bibliografia.jpg",
     title: "Bibliografía",
     videoSrc: "https://youtu.be/5Be7muS6u1o?si=7LxsNEFMORkKHuEf",
-    position: { top: "50%", right: "10%" }, // Right side, below Curriculum
+    position: { top: "15%", right: "15%" }, // Right side, below Curriculum
   },
   {
     id: 3,
     image: "/images/autoficcion.jpg",
     title: "Sobre la Auto-ficción",
     videoSrc: "https://youtu.be/1Ew184asbcA?si=c__-2HuW3Qwty2bl",
-    position: { top: "10%", left: "50%" }, // Center top, above Gonzalo's head
+    position: { top: "65%", left: "35%" }, // Center top, above Gonzalo's head
   },
   {
     id: 4,
@@ -83,7 +83,11 @@ export default function HomePage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <MusicPlayer ref={musicPlayerRef} audioSrc="/music/gonzalo.mp3" autoPlay />
+      <MusicPlayer
+        ref={musicPlayerRef}
+        audioSrc="/music/gonzalo.mp3"
+        autoPlay
+      />
 
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -114,7 +118,7 @@ export default function HomePage() {
       </div>
 
       {/* Title Overlay */}
-      <div className="absolute top-8 left-8 z-20">
+      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
         <h1 className="text-4xl font-bold text-white drop-shadow-2xl">
           Gonzalo Celorio
         </h1>
