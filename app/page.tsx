@@ -19,7 +19,7 @@ const interactivePoints = [
     id: 2,
     image: "/images/bibliografia.jpg",
     title: "Bibliografía",
-    videoSrc: "https://youtu.be/5Be7muS6u1o?si=7LxsNEFMORkKHuEf",
+    videoSrc: "https://www.youtube.com/watch?v=xS4sjxa2wX8",
     position: { top: "15%", right: "15%" }, // Right side, below Curriculum
   },
   {
