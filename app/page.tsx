@@ -12,7 +12,7 @@ const interactivePoints = [
     id: 1,
     image: "/images/curriculum.jpg",
     title: "Ese Montón de espejos rotos (memorias)",
-    videoSrc: "https://youtu.be/uAZS58fnaPM?si=szdsHFIZc3K8wo2N",
+    videoSrc: "https://youtu.be/PYM8SST6gTA",
     position: { top: "65%", right: "15%" }, // Right side, top
   },
   {
@@ -26,28 +26,28 @@ const interactivePoints = [
     id: 3,
     image: "/images/autoficcion.jpg",
     title: "Sobre la Auto-ficción",
-    videoSrc: "https://youtu.be/1Ew184asbcA?si=c__-2HuW3Qwty2bl",
+    videoSrc: "https://youtu.be/HahCNyYrLjw",
     position: { top: "65%", left: "35%" }, // Center top, above Gonzalo's head
   },
   {
     id: 4,
     image: "/images/tres-lindas-cubanas.jpg",
     title: "Tres Lindas Cubanas (línea materna)",
-    videoSrc: "https://youtu.be/-zcCyWNwdmE?si=l4R_Vg8NGBP8X-K0",
+    videoSrc: "https://youtu.be/rM_PV6fZKB0",
     position: { top: "15%", left: "10%" }, // Left side, top
   },
   {
     id: 5,
     image: "/images/el-metal-y-la-escoria.jpg",
     title: "El metal y la escoria (línea paterna)",
-    videoSrc: "https://youtu.be/RiD7vobjIPg?si=Hjh17DI243cIFBoM",
+    videoSrc: "https://youtu.be/DdutUpMxpBE",
     position: { top: "40%", left: "10%" }, // Left side, middle
   },
   {
     id: 6,
     image: "/images/los-apostatas.jpg",
     title: "Los apostatas (hermanos)",
-    videoSrc: "https://youtu.be/fKLIm327sfk?si=vbC2g4ttXnwfyuSM",
+    videoSrc: "https://youtu.be/6mFesry3JNg",
     position: { top: "65%", left: "10%" }, // Left side, bottom
   },
 ];
