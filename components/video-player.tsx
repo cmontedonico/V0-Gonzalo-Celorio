@@ -1,46 +1,46 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useEffect } from "react"
+import { useEffect } from "react";
 
 interface VideoPlayerProps {
-  videoSrc: string
-  onClose: () => void
+  videoSrc: string;
+  onClose: () => void;
 }
 
 function getYouTubeVideoId(url: string): string | null {
   const patterns = [
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&?/\s]+)/,
     /youtube\.com\/watch\?.*v=([^&?/\s]+)/,
-  ]
+  ];
 
   for (const pattern of patterns) {
-    const match = url.match(pattern)
-    if (match) return match[1]
+    const match = url.match(pattern);
+    if (match) return match[1];
   }
-  return null
+  return null;
 }
 
 export function VideoPlayer({ videoSrc, onClose }: VideoPlayerProps) {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose()
+        onClose();
       }
-    }
+    };
 
-    document.addEventListener("keydown", handleKeyPress)
-    return () => document.removeEventListener("keydown", handleKeyPress)
-  }, [onClose])
+    document.addEventListener("keydown", handleKeyPress);
+    return () => document.removeEventListener("keydown", handleKeyPress);
+  }, [onClose]);
 
   const handleBackgroundClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      onClose()
+      onClose();
     }
-  }
+  };
 
-  const youtubeVideoId = getYouTubeVideoId(videoSrc)
+  const youtubeVideoId = getYouTubeVideoId(videoSrc);
 
   return (
     <div className="fullscreen-video" onClick={handleBackgroundClick}>
@@ -65,11 +65,18 @@ export function VideoPlayer({ videoSrc, onClose }: VideoPlayerProps) {
         className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors z-50"
         aria-label="Close video"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
-  )
+  );
 }
