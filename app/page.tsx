@@ -26,7 +26,7 @@ const interactivePoints = [
     id: 3,
     image: "/images/autoficcion.jpg",
     title: "Sobre la Auto-ficción",
-    videoSrc: "https://youtu.be/HahCNyYrLjw",
+    videoSrc: "https://www.youtube.com/watch?v=SrKyy7MQlc0",
     position: { top: "65%", left: "35%" }, // Center top, above Gonzalo's head
   },
   {
