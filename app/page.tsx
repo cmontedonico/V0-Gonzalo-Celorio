@@ -118,8 +118,8 @@ export default function HomePage() {
       </div>
 
       {/* Title Overlay */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 text-center">
-        <h1 className="text-4xl font-bold text-white drop-shadow-2xl">
+      <div className="absolute top-25 left-1/2 -translate-x-1/2 z-20 text-center">
+        <h1 className="text-6xl font-bold text-white drop-shadow-2xl">
           Gonzalo Celorio
         </h1>
         <p className="text-xl text-white/90 drop-shadow-lg mt-2">
