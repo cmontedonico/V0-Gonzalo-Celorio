@@ -76,6 +76,8 @@ export default function HomePage() {
   };
 
   const handleVideoClose = () => {
+    // Trigger playback from the same user interaction used to close the video.
+    musicPlayerRef.current?.play();
     setCurrentVideo(null);
   };
 
