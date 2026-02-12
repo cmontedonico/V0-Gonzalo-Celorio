@@ -46,7 +46,7 @@ const interactivePoints = [
   {
     id: 6,
     image: "/images/los-apostatas.jpg",
-    title: "Los apostatas (hermanos)",
+    title: "Los apostatas (línea fraterna)",
     videoSrc: "https://youtu.be/6mFesry3JNg",
     position: { top: "65%", left: "10%" }, // Left side, bottom
   },

@@ -62,12 +62,13 @@ export function VideoPlayer({ videoSrc, onClose }: VideoPlayerProps) {
       )}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors z-50"
-        aria-label="Close video"
+        className="absolute top-4 right-4 flex items-center gap-2 text-white bg-black/50 hover:bg-black/70 rounded-full px-4 py-2 transition-colors z-50"
+        aria-label="Regresar"
       >
+        <span className="text-sm font-medium">Regresar</span>
         <svg
-          width="40"
-          height="40"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
